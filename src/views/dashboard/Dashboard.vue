@@ -27,7 +27,7 @@
         <transaction-table />
       </el-col>
       <el-col :span='6'>
-
+         <todo-list />
       </el-col>
       <el-col :span='6'>
 
@@ -44,6 +44,7 @@ import RaddarChart from "./RaddarChart";
 import PieChart from './PieChart'
 import BarChart from './BarChart';
 import TransactionTable from './TransactionTable';
+import TodoList from './todolist'
 
 export default {
   components: {
@@ -54,6 +55,7 @@ export default {
     PieChart,
     BarChart,
     TransactionTable,
+    TodoList,
   },
 };
 </script>

@@ -1,17 +1,14 @@
 <template>
-  <div class="navbar" style='width:100%'>
-    <icon></icon>
-
-    <breadcrumb />
-    
+  <div class="navbar" style='width:100%'  >
+    <span>
+      <icon @flodClick="flodClick" />
+    </span>
+    <breadcrumb />    
     <setup />
-
     <el-tooltip class="item" effect="dark" content="Global Size" placement="bottom">
       <size-select />
-    </el-tooltip>   
-   
-    <screenfull />
-   
+    </el-tooltip>      
+    <screenfull />   
     <search />
   </div>
 </template>
@@ -24,8 +21,6 @@ import Screenfull from './Screenfull'
 import SizeSelect from './SizeSelect';
 import Setup from './Setup';
 
-
-
 export default {
   components: {
     Icon,
@@ -35,6 +30,12 @@ export default {
     SizeSelect,
     Setup
   },
+  methods: {
+    flodClick() {
+      this.$emit('flodClick')
+    }
+    
+  }
 };
 </script>
 

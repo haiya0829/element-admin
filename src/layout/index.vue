@@ -1,15 +1,18 @@
 <template>
   <div class="wrapper">
-    <sidebar>
-      <div class="logo" @click="backPage">
+    <sidebar :class="{ flod: flod }">
+      <div class="logo" @click="backPage" :style='logoShow' >
         <svg-icon icon-class='vue' />
         <span>Vue Element Admin</span>
       </div>
     </sidebar>
     <div class="header">
-      <navbar :class="{ Sticky: isSticky }" />
+      <navbar :class="{ Sticky: isSticky }" @flodClick='isFlod' />
       <app-main />
-      <right-panel @switchClick="navbarSticky" />
+      <right-panel 
+        @switchClick="navbarSticky" 
+        @logoClick='isLogoShow'
+        />
     </div>
   </div>
 </template>
@@ -30,6 +33,8 @@ export default {
   data() {
     return {
       isSticky: false,
+      logoShow:'display: none',
+      flod:false,
     };
   },
   methods: {
@@ -38,6 +43,12 @@ export default {
     },
     backPage() {
       this.$router.push('/dashboard')
+    },
+    isLogoShow() {
+      this.logoShow = this.logoShow === 'display: none' ? '' : 'display: none'
+  },
+    isFlod() {
+      this.flod = !this.flod
     }
   },
 };
@@ -48,6 +59,10 @@ export default {
   display: flex;
   min-width: 1200px;
   box-sizing: border-box;
+}
+.flod {
+  width: 50px !important; 
+  overflow: hidden;
 }
 .header {
   width: 100%;

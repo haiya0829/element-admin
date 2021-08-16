@@ -23,8 +23,6 @@ export default {
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width:210px;
-  min-width:210px;
-  overflow: hidden;
 }
 .iconfont {
   font-size: 12px;

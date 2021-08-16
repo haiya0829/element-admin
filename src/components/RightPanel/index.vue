@@ -27,7 +27,7 @@
       </div>
       <div class="block">
         <span>Sidebar Logo</span>
-        <div >
+        <div @click="btn1Click">
           <el-switch v-model="value3" :active-color="color1">
           </el-switch>
         </div>
@@ -68,6 +68,9 @@ export default {
   },
     btnClick() {
       this.$emit('switchClick')
+    },
+    btn1Click() {
+      this.$emit('logoClick')
     },
   }
 };

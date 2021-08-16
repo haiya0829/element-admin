@@ -1,5 +1,5 @@
 <template>
-  <i id='icon' :class="foldOpen" @click="isCollapse"></i>
+  <i id='icon' :class="foldOpen"  @click="isCollapse"></i>
 </template>
 
 <script>
@@ -12,6 +12,8 @@ export default {
   methods: {
     isCollapse() {
       this.foldOpen = this.foldOpen === "el-icon-s-fold" ? "el-icon-s-unfold" : "el-icon-s-fold";
+      this.$emit('flodClick')
+      console.log('333')
     },
   },
 }
