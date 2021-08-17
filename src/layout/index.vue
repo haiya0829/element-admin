@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <sidebar :class="{ flod: flod }">
+    <sidebar :class="{ flod: Flod }">
       <div class="logo" @click="backPage" :style='logoShow' >
         <svg-icon icon-class='vue' />
         <span>Vue Element Admin</span>
@@ -34,7 +34,7 @@ export default {
     return {
       isSticky: false,
       logoShow:'display: none',
-      flod:false,
+      Flod:false,
     };
   },
   methods: {
@@ -48,7 +48,7 @@ export default {
       this.logoShow = this.logoShow === 'display: none' ? '' : 'display: none'
   },
     isFlod() {
-      this.flod = !this.flod
+      this.Flod = !this.Flod
     }
   },
 };
@@ -63,6 +63,7 @@ export default {
 .flod {
   width: 50px !important; 
   overflow: hidden;
+
 }
 .header {
   width: 100%;
@@ -87,7 +88,6 @@ export default {
     font-size:32px;
     background: #2b2f3a;
     margin-right: 10px;
-
   }
 }
 </style>

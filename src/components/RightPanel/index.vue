@@ -45,7 +45,7 @@ export default {
       color1: "#409EFF",
       value1: true,
       value2: false,
-      value3: true,
+      value3: false,
       isShow:'right:-260px',
       predefineColors: [
         '#409EFF',
